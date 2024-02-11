@@ -3,7 +3,6 @@
 #include <assert.h>
 #include <string.h>
 
-
 typedef struct {
     int** data;
     int ligne;
@@ -151,17 +150,36 @@ tableau resoudre(matrice terrain)
 }
 
 int main(){
-    matrice test = {malloc(sizeof(int*)*10),10,10};
-    test.data[0] = (int[]){0,1,2,3,4,5,6,7,8,9};
-    test.data[1] = (int[]){9,9,9,9,6,6,1,1,1,1};
-    test.data[2] = (int[]){1,2,3,4,5,6,7,8,9,0};
-    test.data[3] = (int[]){9,8,7,6,5,4,3,2,1,0};
-    test.data[4] = (int[]){9,9,20,1,1,1,1,1,1,1};
-    test.data[5] = (int[]){1,2,3,3,2,1,1,2,3,1};
-    test.data[6] = (int[]){0,0,0,0,0,0,0,0,0,0};
-    test.data[7] = (int[]){0,1,2,3,4,5,6,7,7,7};
-    test.data[8] = (int[]){0,1,2,3,4,5,6,7,8,9};
-    test.data[9] = (int[]){0,1,2,3,4,5,6,7,8,9};
+
+    // On commence par initialiser le générateur de nombre pseudo-aléatoires.
+    srand( 459304 );
+
+    // matrice test = {malloc(sizeof(int*)*10),10,10};
+    // test.data[0] = (int[]){0,1,2,3,4,5,6,7,8,9};
+    // test.data[1] = (int[]){9,9,9,9,6,6,1,1,1,1};
+    // test.data[2] = (int[]){1,2,3,4,5,6,7,8,9,0};
+    // test.data[3] = (int[]){9,8,7,6,5,4,3,2,1,0};
+    // test.data[4] = (int[]){9,9,20,1,1,1,1,1,1,1};
+    // test.data[5] = (int[]){1,2,3,3,2,1,1,2,3,1};
+    // test.data[6] = (int[]){0,0,0,0,0,0,0,0,0,0};
+    // test.data[7] = (int[]){0,1,2,3,4,5,6,7,7,7};
+    // test.data[8] = (int[]){0,1,2,3,4,5,6,7,8,9};
+    // test.data[9] = (int[]){0,1,2,3,4,5,6,7,8,9};
+
+    int nbligne = 10;
+    int nbcolonne = 20;
+
+    matrice test = {malloc(sizeof(int*)*nbcolonne),nbligne,nbcolonne};
+    for (int i = 0; i < nbligne; i++) {
+        test.data[i] = malloc(sizeof(int)*nbcolonne);
+        assert(test.data[i] != NULL);
+        for (int j = 0 ; j < nbcolonne; j++) {
+
+            test.data[i][j] = rand() % 100 ; // On ne veut que des nombres entre 0 et 99
+
+        }
+    }
+
 
     tableau resultat = resoudre(test);
 
