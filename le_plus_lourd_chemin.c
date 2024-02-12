@@ -70,7 +70,7 @@ void visualiser_solution(matrice terrain,tableau solution){
                 printf("%2i ",terrain.data[y][j]);
         }
     }
-    printf("%2i\n",terrain.data[x][y]);
+    printf("%2i\n",terrain.data[y][x]);
 }
 
 
