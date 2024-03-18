@@ -2,10 +2,10 @@
 
 int main()
 {
-    int  josephine[8] = {2,2,2,4,4,5,5,6}
-    tableau rennee = {
+    int  josephine[8] = {2,2,2,4,4,5,5,6};
+    tableau rennee = (tableau){
         8,
-        josephine,
+        josephine
     };
 
     arbre *nicolas = huffman(&rennee);

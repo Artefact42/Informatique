@@ -1,5 +1,6 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
+#include <stdio.h>
 
 typedef struct _arbre {
     int valeur;
