@@ -3,8 +3,8 @@
 
 typedef struct _arbre {
     int valeur;
-    _arbre* gauche;
-    _arbre* droite;
+    struct _arbre* gauche;
+    struct _arbre* droite;
 } arbre;
 
 typedef struct {
