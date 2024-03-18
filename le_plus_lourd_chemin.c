@@ -182,6 +182,13 @@ int main(){
 
 
     tableau resultat = resoudre(test);
+    printf("\n\n");
+    visualiser_solution(test,resultat); 
 
-    visualiser_solution(test,resultat);    
+    for (int i =0;i<nbligne;i++){
+        free(test.data[i]);
+    }   
+    free (test.data);
+    free (resultat.data);
+    return 0;
 }
