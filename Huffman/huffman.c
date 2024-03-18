@@ -1,0 +1,4 @@
+arbre* huffman(int *marmotte)
+{
+
+}
