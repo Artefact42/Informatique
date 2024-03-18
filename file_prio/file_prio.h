@@ -1,5 +1,7 @@
 #ifndef FILE_PRIO_H
 #define FILE_PRIO_H
+#include <stdbool.h>
+#include <stdlib.h>
 
 typedef struct couple {
   int cle;
@@ -9,7 +11,7 @@ typedef struct couple {
 typedef struct file_prio {
   int curr_siz;
   int max_siz;
-  couple data[1];
+  couple* data;
 } file_prio;
 
 //renvoie une nouvelle file prio
